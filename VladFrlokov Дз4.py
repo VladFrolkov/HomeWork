@@ -7,4 +7,6 @@ def fibbonachi(n: int) -> list:
             fib_list.append(a)
             i = i + 1
     return fib_list
+
+
 print(fibbonachi(10))

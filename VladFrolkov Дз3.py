@@ -24,6 +24,7 @@ elif example[1] == '/':
 else:
     print('Error')'''
 
+
 # Fourth task
 '''n = (input('Enter a number: '))
 num_lst = list(n)

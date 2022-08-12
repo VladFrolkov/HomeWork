@@ -25,3 +25,4 @@ tri_2 = Triangle(sides_2)
 
 tri_1.is_possible()
 tri_2.is_possible()
+

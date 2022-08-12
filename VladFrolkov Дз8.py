@@ -1,28 +1,41 @@
+from dataclasses import dataclass
+
+@dataclass
 class User:
-    def __init__(self, age: int, country, name, surname, gender, _profession: str):
-        self.age = age
-        self.country = country
-        self.name = name
-        self.surname = surname
-        self.gender = gender
-        self._profession = _profession
-        self.birth_year = 2022 - self.age
-        self.email = f'{self.name}{self.surname}{self.age}@gmail.com'
+    age: int
+    country: str
+    name: str
+    surname: str
+    gender: str
+    __profession: str
+    birth_year: str = None
+    email: str = None
 
-    def doctor(self):
-        self._profession = 'doctor'
+    def email_add(self):
+        self.email = f'{self.name}{self.surname}{self.age}@mail.com'
+        return self.email
 
-    def police_officer(self):
-        self._profession = 'police_officer'
+    def birth_day_set(self):
+        self.birth_year = f'2022 - {self.age}'
+        return self.birth_year
 
-    def teacher(self):
-        self._profession = 'teacher'
+    @staticmethod
+    def doctor():
+        doctor = User(23, 'Bel', 'Bill', 'Gilbert', 'M', 'doctor')
+        return doctor
 
-    def __str__(self):
-        return f'{self.name, self.surname, self.age, self.country, self.gender, self._profession}'
+    @staticmethod
+    def police_officer():
+        police_officer = User(23, 'Bel', 'Bill', 'Gilbert', 'M', 'police_officer')
+        return police_officer
+
+    @staticmethod
+    def teacher():
+        teacher = User(23, 'Bel', 'Bill', 'Gilbert', 'M', 'teacher')
+        return teacher
 
 
 person_1 = User(20, 'Bel', 'Bill', 'Gilbert', 'M', 'cooker')
 print(person_1)
-person_1.doctor()
-print(person_1)
+
+
